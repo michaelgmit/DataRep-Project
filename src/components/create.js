@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 export class Create extends React.Component {
 
     constructor() {
@@ -41,6 +41,20 @@ export class Create extends React.Component {
         alert("Movie: " + this.state.Title + " "
             + this.state.Year + " "
             + this.state.Poster);
+
+            const newMovie = {      //create objects with lower case as server is looking for lower case
+                title: this.state.Title,
+                year: this.state.Year,
+                poster: this.state.Poster
+            }
+
+            axios.post('http://localhost:4000/api/movies',newMovie )
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((err)=>{
+                console.log(err);
+            });
     }
 
     render() {

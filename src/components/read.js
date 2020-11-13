@@ -13,10 +13,10 @@ export class Read extends React.Component {
     };
 
     componentDidMount() {               //when this component is visable in the webpage the axios method will be exacuted
-        axios.get('https://jsonblob.com/api/jsonblob/520c3b5e-0312-11eb-a6af-cbf00d776032')
+        axios.get('http://localhost:4000/api/movies')
             .then(                      //response for the fufilled state of promise
                 (response) => {
-                    this.setState({ movies: response.data.Search })
+                    this.setState({ movies: response.data.movies })
                 })
             .catch(
                 (error) => { console.log(error) } //response to an unfufilled pormise gives error
