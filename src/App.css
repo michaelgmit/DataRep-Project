@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.Card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  width: 40rem;
+}
+.btn{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: .5rem;
+  width: 20rem;
+}
+
+
+.Background{
+  color: 'blue';
+}
+
+.Edit{
+  margin-left: auto;
+  margin-right: auto;
+  width: 40rem;
+}
