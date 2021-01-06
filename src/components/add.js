@@ -48,14 +48,10 @@ export class Add extends React.Component {
   onSub(f) {
     f.preventDefault();   //this prevents submit button from being called repeatedly
     alert(
-      "Album: " +
-      this.state.Name +
-      " " +
-      this.state.Sales +
-      " " +
-      this.state.Cover +
-      " " +
-      this.state.Artist
+      "Album Added: " +
+            this.state.Name +
+            " By " +
+            this.state.Artist
     );
 
     const newAlbum = {            //create objects with lower case as server is looking for lower case
@@ -69,6 +65,8 @@ export class Add extends React.Component {
       .post("http://localhost:4000/api/Albums", newAlbum)
       .then((res) => {
         console.log(res);
+        this.props.history.push("/list"); //this redirects to the list page when the submit button is pressed
+
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +78,7 @@ export class Add extends React.Component {
       <div class="Edit">
         <form onSubmit={this.onSub}>
           <div className="form-group">      {/* div is for input control */}
-            <label>Add Album Name: </label>
+            <label>Album Name: </label>
             <input
               type="text"
               className="form-control"
@@ -89,7 +87,7 @@ export class Add extends React.Component {
             ></input>
           </div>
           <div className="form-group">
-            <label>Artist: </label>
+            <label>Album Artist: </label>
             <input
               type="text"
               className="form-control"
@@ -119,7 +117,7 @@ export class Add extends React.Component {
             <input                          //this will invoke the earlier part of the form to submit 'onSubmit'
               type="submit"
               value="Add Album"
-              className="btn btn-primary"
+              className="btn btn-secondary"
             ></input>
           </div>
         </form>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Albums } from "./albums";
 import axios from "axios";
+import '../app.css';
+import { Link } from 'react-router-dom';
+
 
 export class List extends React.Component {
 
@@ -55,8 +58,9 @@ export class List extends React.Component {
     return (      // code insde the 'return' is jsx
       <div>
         <h1>Albums</h1>
-        <input placeholder="Search For Album" onChange={this.onChange} />       {/* Search bar when tect entered calls onChange */}
+        <input class="searchbar" placeholder="Search For Album" onChange={this.onChange} />       {/* Search bar when tect entered calls onChange */}
         <Albums albums={filteredAlbums} ReloadData={this.ReloadData}></Albums>    {/* change this.state to filteredAlbums */}
+        <Link to="/add" class="btn btn-secondary">Add an Album</Link>
       </div>
     );
   }

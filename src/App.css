@@ -40,7 +40,7 @@
 .Card {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 40rem;
 }
 .btn{
@@ -59,4 +59,27 @@
   margin-left: auto;
   margin-right: auto;
   width: 40rem;
+}
+
+.searchbar{
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.Icons{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8rem;
+  justify-content: center;
+}
+
+.para{
+  margin-bottom: 4rem;
+}
+.Col{
+  width: 150px;
+}
+
+.ImgLink{
+  width: 150px;
 }

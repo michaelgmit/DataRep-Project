@@ -69,15 +69,13 @@ export class Alter extends React.Component {
     onSubmit(f) {
         f.preventDefault(); //prevents calling button multiple times
         alert(
-            "Album: " +
+            "Album Altered: " +
             this.state.Name +
-            " " +
-            this.state.Sales +
-            " " +
-            this.state.Cover +
-            " " +
+            " By " +
             this.state.Artist
         );
+
+        
 
         const newAlbum = {
             name: this.state.Name,
@@ -92,6 +90,7 @@ export class Alter extends React.Component {
             .put("http://localhost:4000/api/albums/" + this.state._id, newAlbum)
             .then((res) => {
                 console.log(res.data);
+                this.props.history.push("/list");
             })
             .catch((err) => {
                 console.log(err);
@@ -142,7 +141,7 @@ export class Alter extends React.Component {
                         <input
                             type="submit"
                             value="Edit Album"
-                            className="btn btn-primary"
+                            className="btn btn-secondary"
                         ></input>
                     </div>
                 </form>

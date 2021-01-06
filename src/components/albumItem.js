@@ -40,12 +40,10 @@ export class AlbumItem extends React.Component {
               </footer>
             </blockquote>
           </Card.Body>
-
           {/* Edit Link*/}
-          <Link to={"/alter/" + this.props.album._id} class="btn btn-primary">Edit</Link>
-
+          <Link to={"/alter/" + this.props.album._id} class="btn btn-secondary">Edit</Link>
           {/* Delete Button*/}
-          <Button variant="danger" onClick={this.DeleteAlbum} class="btn">Delete</Button>
+          <Button variant="dark" onClick={this.DeleteAlbum} class="btn">Delete</Button>
         </Card>
       </div>
     );
